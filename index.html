@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>PET B1 Practice Test 2</title>
+<style>
+:root{--bg:#f5f7fb;--card:#fff;--ink:#172033;--muted:#667085;--line:#d8dee9;--blue:#2563eb;--blue2:#173b8f;--gold:#f59e0b;--good:#15803d;--bad:#b91c1c;--green:#ecfdf3;--red:#fef2f2;--shadow:0 10px 28px rgba(17,24,39,.08);--r:18px}
+*{box-sizing:border-box}body{margin:0;font-family:Arial,Helvetica,sans-serif;background:linear-gradient(180deg,#eaf1ff,#f5f7fb 35%,#fff);color:var(--ink);line-height:1.6}
+header{background:linear-gradient(135deg,#0f172a,#1d4ed8 65%,#60a5fa);color:#fff;padding:36px 22px}.hero,main{max-width:1180px;margin:auto}.badge{display:inline-block;padding:7px 12px;border-radius:999px;background:rgba(255,255,255,.17);font-weight:800}h1{font-size:clamp(2rem,4vw,4rem);margin:18px 0 10px;line-height:1.05}.subtitle{max-width:850px;font-size:1.08rem}
+.grid4{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:24px}.box{background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.25);border-radius:16px;padding:14px}.box strong{display:block}
+main{padding:22px}nav{position:sticky;top:0;z-index:10;background:rgba(245,247,251,.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);margin:0 -22px 22px;padding:12px 22px;display:flex;flex-wrap:wrap;gap:8px}
+.tab{border:1px solid var(--line);background:white;padding:10px 13px;border-radius:999px;font-weight:800;cursor:pointer}.tab.active{background:var(--blue);color:#fff;border-color:var(--blue)}
+section{display:none}.activeSec{display:block}.card{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:22px;margin:18px 0;box-shadow:var(--shadow)}.title{display:flex;justify-content:space-between;gap:16px;align-items:center;flex-wrap:wrap}.pill{background:#eaf1ff;color:var(--blue2);padding:6px 10px;border-radius:999px;font-weight:800;font-size:.86rem}.inst{background:#fff7e6;border-left:5px solid var(--gold);padding:14px 16px;border-radius:14px;margin:14px 0 20px}
+.q{border:1px solid var(--line);border-radius:16px;padding:16px;margin:14px 0}.notice{background:#f9fafb;border:2px dashed #b8c1d1;padding:14px;border-radius:12px;text-align:center;font-weight:800}.msg{background:#f4f7ff;border-left:5px solid var(--blue);padding:13px;border-radius:12px}.opts{display:grid;gap:8px;margin-top:10px}.opt{display:flex;gap:10px;border:1px solid var(--line);border-radius:12px;padding:10px;cursor:pointer}.opt:hover{background:#f7faff;border-color:var(--blue)}
+select,input.gap{padding:10px 12px;border:1px solid var(--line);border-radius:12px;font-size:1rem;background:#fff}select{max-width:390px;width:100%}.inline{width:auto;margin:0 4px}.gap{max-width:155px;margin:0 4px;font-weight:700}.fb{font-weight:800;margin-top:8px;min-height:24px}.ok{color:var(--good)}.bad{color:var(--bad)}
+.text{background:#fcfcfd;border:1px solid var(--line);border-radius:16px;padding:18px;margin:12px 0;max-width:900px}textarea{width:100%;min-height:170px;border:1px solid var(--line);border-radius:16px;padding:14px;font-size:1rem;line-height:1.55}.wc{color:var(--muted);font-weight:800}
+button.action{background:var(--blue);color:#fff;border:0;border-radius:12px;padding:11px 15px;font-weight:900;cursor:pointer;margin:8px 8px 8px 0}.secondary{background:#fff!important;color:var(--blue2)!important;border:1px solid var(--line)!important}.danger{background:#b91c1c!important}
+.score{position:fixed;right:20px;bottom:20px;background:#fff;border:1px solid var(--line);border-radius:18px;padding:14px 16px;box-shadow:0 16px 40px rgba(0,0,0,.14);z-index:20}.bar{height:10px;background:#edf1f7;border-radius:999px;overflow:hidden;margin-top:8px}.bar span{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--blue),#22c55e)}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:16px}.cards{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}.smallcard{border:1px solid var(--line);border-radius:14px;padding:14px;background:#fcfcfd}.photo{height:210px;border:2px dashed #9db1d5;border-radius:16px;display:flex;align-items:center;justify-content:center;text-align:center;background:linear-gradient(135deg,#eef4ff,#fff8e6);font-weight:900;color:#2b4d91}.script{display:none;background:#101828;color:#fff;padding:15px;border-radius:15px;white-space:pre-wrap;font-family:Consolas,monospace}.exp{border-left:5px solid #60a5fa;background:#f8fbff;padding:12px 14px;border-radius:12px;margin:10px 0}
+details{border:1px solid var(--line);border-radius:14px;padding:12px;margin:12px 0}summary{font-weight:900;color:var(--blue2);cursor:pointer}footer{text-align:center;color:var(--muted);padding:32px 20px 80px}
+@media(max-width:860px){.grid4,.two,.cards{grid-template-columns:1fr}.score{position:static;margin:18px 0}nav{position:static}}
+
+.tool-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.toolbox{border:1px solid var(--line);border-radius:16px;padding:16px;background:#fcfcfd}
+.timerDisplay{font-size:2rem;font-weight:900;color:var(--blue2);letter-spacing:1px}
+.reportBox{white-space:pre-wrap;background:#101828;color:#f8fafc;border-radius:14px;padding:14px;max-height:360px;overflow:auto;font-family:Consolas,monospace}
+.inputSmall{padding:10px;border:1px solid var(--line);border-radius:10px;max-width:120px}
+@media(max-width:860px){.tool-grid{grid-template-columns:1fr}}
+
+@media print{nav,.score,button.action{display:none!important}section{display:block!important}.card{box-shadow:none;break-inside:avoid}body{background:#fff}}
+</style>
+</head>
+<body>
+<header><div class="hero"><span class="badge">PET B1 Practice Test 2 • Original Questions</span><h1>Interactive B1 Preliminary Practice Test 2</h1><p class="subtitle">A second complete PET-style HTML workbook with new Reading, Writing, Listening and Speaking tasks, answer checking, teacher scripts, explanations and improvement advice.</p><div class="grid4"><div class="box"><strong>Reading</strong><span>6 parts • 32 questions</span></div><div class="box"><strong>Writing</strong><span>Email + article/story</span></div><div class="box"><strong>Listening</strong><span>4 parts • 25 questions</span></div><div class="box"><strong>Speaking</strong><span>4 PET-style parts</span></div></div></div></header>
+<main>
+<nav><button type="button" class="tab active" onclick="tab('overview',this)">Overview</button><button type="button" class="tab" onclick="tab('reading',this)">Reading</button><button type="button" class="tab" onclick="tab('writing',this)">Writing</button><button type="button" class="tab" onclick="tab('listening',this)">Listening</button><button type="button" class="tab" onclick="tab('speaking',this)">Speaking</button><button type="button" class="tab" onclick="tab('explain',this)">Explanations</button><button type="button" class="tab" onclick="tab('tools',this)">Tools</button><button type="button" class="tab" onclick="tab('key',this)">Teacher Key</button></nav>
+<div class="score"><strong>Score</strong><span id="scoreText">0 / 0 correct</span><div class="bar"><span id="scoreBar"></span></div></div>
+
+<section id="overview" class="activeSec"><div class="card"><div class="title"><h2>How to Use This Test</h2><span class="pill">Mock exam + classroom practice</span></div><p>This is a second complete PET B1 practice test. It uses completely different topics from the first file while keeping the same PET-style structure and B1 difficulty.</p><div class="inst"><strong>Recommended flow:</strong> Reading: 45 minutes. Writing: 45 minutes. Listening: about 30 minutes. Speaking: 12–15 minutes per pair. Use the explanation section after students finish.</div><details><summary>Deployment note</summary><p>This file is fully self-contained. You can upload it directly to Netlify, Vercel, GitHub Pages, Google Drive preview, or any static hosting service. No backend, database, or API key is required.</p></details></div></section>
+
+<section id="reading">
+<div class="card"><div class="title"><h2>Reading Part 1</h2><span class="pill">Questions 1–5</span></div><div class="inst">For each question, choose the correct answer A, B or C.</div>
+<div class="q" data-answer="C"><h4>1</h4><div class="notice">TRAIN NOTICE<br>The 16:20 train to Brighton will leave from Platform 6 today, not Platform 3.</div><div class="opts"><label class="opt"><input type="radio" name="r1" value="A"> A. The Brighton train is cancelled today.</label><label class="opt"><input type="radio" name="r1" value="B"> B. The Brighton train will be late.</label><label class="opt"><input type="radio" name="r1" value="C"> C. Passengers must go to a different platform.</label></div><div class="fb"></div></div>
+<div class="q" data-answer="B"><h4>2</h4><div class="msg"><strong>Text from Lucy:</strong><br>I can’t find my science notes. Could you send me a photo of yours before tonight’s revision session?</div><div class="opts"><label class="opt"><input type="radio" name="r2" value="A"> A. Lucy wants to borrow a camera.</label><label class="opt"><input type="radio" name="r2" value="B"> B. Lucy needs help preparing for science.</label><label class="opt"><input type="radio" name="r2" value="C"> C. Lucy has cancelled the revision session.</label></div><div class="fb"></div></div>
+<div class="q" data-answer="A"><h4>3</h4><div class="notice">BOOKSHOP SALE<br>Buy two novels and get the cheaper one half price. Offer ends Sunday.</div><div class="opts"><label class="opt"><input type="radio" name="r3" value="A"> A. Customers can save money if they buy two novels.</label><label class="opt"><input type="radio" name="r3" value="B"> B. All books are half price until Sunday.</label><label class="opt"><input type="radio" name="r3" value="C"> C. Customers must buy books before Sunday morning.</label></div><div class="fb"></div></div>
+<div class="q" data-answer="C"><h4>4</h4><div class="msg"><strong>Message from Coach:</strong><br>Practice is indoors today because the field is too wet. Bring clean trainers.</div><div class="opts"><label class="opt"><input type="radio" name="r4" value="A"> A. Practice is cancelled because of bad weather.</label><label class="opt"><input type="radio" name="r4" value="B"> B. Players should train outside carefully.</label><label class="opt"><input type="radio" name="r4" value="C"> C. Players need shoes suitable for inside.</label></div><div class="fb"></div></div>
+<div class="q" data-answer="B"><h4>5</h4><div class="notice">LANGUAGE EXCHANGE<br>Please arrive ten minutes early so we can put students into groups before the activity starts.</div><div class="opts"><label class="opt"><input type="radio" name="r5" value="A"> A. Students can choose their own groups later.</label><label class="opt"><input type="radio" name="r5" value="B"> B. Students should come before the official start time.</label><label class="opt"><input type="radio" name="r5" value="C"> C. The activity will finish ten minutes early.</label></div><div class="fb"></div></div>
+<button type="button" class="action" onclick="checkQuestions(this)">Check Reading Part 1</button></div>
+
+<div class="card"><div class="title"><h2>Reading Part 2</h2><span class="pill">Questions 6–10</span></div><div class="inst">Five people want to buy a gift. Match each person with the best gift idea A–H.</div>
+<div class="cards"><div class="smallcard"><strong>A. Travel Journal</strong><p>A small notebook with maps and space for writing about trips.</p></div><div class="smallcard"><strong>B. Wireless Headphones</strong><p>Good quality sound, useful for music, podcasts and online lessons.</p></div><div class="smallcard"><strong>C. Indoor Plant Kit</strong><p>Seeds, soil and simple instructions for beginners.</p></div><div class="smallcard"><strong>D. Puzzle Board Game</strong><p>A cooperative game for families who enjoy solving problems together.</p></div><div class="smallcard"><strong>E. Sports Water Bottle</strong><p>Light, strong and easy to carry during exercise.</p></div><div class="smallcard"><strong>F. Art Marker Set</strong><p>Thirty coloured markers for drawing and posters.</p></div><div class="smallcard"><strong>G. Cooking Apron</strong><p>A washable apron with pockets.</p></div><div class="smallcard"><strong>H. Desk Lamp</strong><p>A bright lamp with three light settings for reading or studying.</p></div></div>
+<div class="q" data-answer="F"><p><strong>6.</strong> Nina loves designing posters for school events and needs more colours for her work.</p><select><option value="">Choose</option><option>A</option><option>B</option><option>C</option><option>D</option><option>E</option><option>F</option><option>G</option><option>H</option></select><div class="fb"></div></div>
+<div class="q" data-answer="A"><p><strong>7.</strong> Jack is going abroad soon and wants to record what happens each day.</p><select><option value="">Choose</option><option>A</option><option>B</option><option>C</option><option>D</option><option>E</option><option>F</option><option>G</option><option>H</option></select><div class="fb"></div></div>
+<div class="q" data-answer="D"><p><strong>8.</strong> Maria wants something her whole family can enjoy together at home.</p><select><option value="">Choose</option><option>A</option><option>B</option><option>C</option><option>D</option><option>E</option><option>F</option><option>G</option><option>H</option></select><div class="fb"></div></div>
+<div class="q" data-answer="H"><p><strong>9.</strong> Tom studies late in the evening and says his room is not bright enough.</p><select><option value="">Choose</option><option>A</option><option>B</option><option>C</option><option>D</option><option>E</option><option>F</option><option>G</option><option>H</option></select><div class="fb"></div></div>
+<div class="q" data-answer="C"><p><strong>10.</strong> Emily wants to try growing something, but she has never done it before.</p><select><option value="">Choose</option><option>A</option><option>B</option><option>C</option><option>D</option><option>E</option><option>F</option><option>G</option><option>H</option></select><div class="fb"></div></div>
+<button type="button" class="action" onclick="checkQuestions(this)">Check Reading Part 2</button></div>
+
+<div class="card"><div class="title"><h2>Reading Part 3</h2><span class="pill">Questions 11–15</span></div><div class="inst">Read the article and choose the correct answer.</div><div class="text"><h3>My First Part-Time Job</h3><p>When I started working at a small café on Saturdays, I expected the job to be easy. I imagined making coffee, taking money and chatting to customers. On my first day, however, I discovered that the work was much busier than I had thought.</p><p>The manager, Paula, showed me how to use the machine and explained the menu. I made several mistakes at first. I forgot one customer’s sandwich and gave another customer the wrong drink. Paula stayed calm and told me that everyone needs time to learn.</p><p>After a few weeks, I became faster and more confident. I also learned how important it is to listen carefully. Some customers were in a hurry, while others wanted to talk. I had to understand what each person needed.</p><p>The best part of the job is not the money, although that is useful. I enjoy feeling responsible and being part of a team. I now think every teenager should try a part-time job because it teaches things that school cannot always teach.</p></div>
+<div class="q" data-answer="C"><p><strong>11.</strong> What did the writer think before starting the job?</p><div class="opts"><label class="opt"><input type="radio" name="r11" value="A"> A. It would be very stressful.</label><label class="opt"><input type="radio" name="r11" value="B"> B. It would be badly paid.</label><label class="opt"><input type="radio" name="r11" value="C"> C. It would be simple.</label><label class="opt"><input type="radio" name="r11" value="D"> D. It would be boring.</label></div><div class="fb"></div></div>
+<div class="q" data-answer="A"><p><strong>12.</strong> How did Paula react to the writer’s mistakes?</p><div class="opts"><label class="opt"><input type="radio" name="r12" value="A"> A. She was patient.</label><label class="opt"><input type="radio" name="r12" value="B"> B. She was disappointed.</label><label class="opt"><input type="radio" name="r12" value="C"> C. She stopped the writer working.</label><label class="opt"><input type="radio" name="r12" value="D"> D. She asked customers to help.</label></div><div class="fb"></div></div>
+<div class="q" data-answer="D"><p><strong>13.</strong> What did the writer learn about customers?</p><div class="opts"><label class="opt"><input type="radio" name="r13" value="A"> A. Most customers are unfriendly.</label><label class="opt"><input type="radio" name="r13" value="B"> B. Customers always want fast service.</label><label class="opt"><input type="radio" name="r13" value="C"> C. Customers prefer quiet cafés.</label><label class="opt"><input type="radio" name="r13" value="D"> D. Different customers need different things.</label></div><div class="fb"></div></div>
+<div class="q" data-answer="B"><p><strong>14.</strong> What does the writer like most about the job?</p><div class="opts"><label class="opt"><input type="radio" name="r14" value="A"> A. Getting free coffee.</label><label class="opt"><input type="radio" name="r14" value="B"> B. Having responsibility.</label><label class="opt"><input type="radio" name="r14" value="C"> C. Finishing early.</label><label class="opt"><input type="radio" name="r14" value="D"> D. Meeting classmates.</label></div><div class="fb"></div></div>
+<div class="q" data-answer="A"><p><strong>15.</strong> What is the writer’s main message?</p><div class="opts"><label class="opt"><input type="radio" name="r15" value="A"> A. Part-time jobs can teach useful life skills.</label><label class="opt"><input type="radio" name="r15" value="B"> B. Café work is better than school.</label><label class="opt"><input type="radio" name="r15" value="C"> C. Teenagers should only work for money.</label><label class="opt"><input type="radio" name="r15" value="D"> D. Managers should train customers.</label></div><div class="fb"></div></div>
+<button type="button" class="action" onclick="checkQuestions(this)">Check Reading Part 3</button></div>
+
+<div class="card"><div class="title"><h2>Reading Part 4</h2><span class="pill">Questions 16–20</span></div><div class="inst">Choose the sentence A–G that fits each gap. There is one extra sentence.</div>
+<div class="text"><h3>Starting a School Podcast</h3><p>Our English teacher recently asked us to create a podcast episode about student life. <select class="inline" data-gap="16"><option value="">16</option><option>A</option><option>B</option><option>C</option><option>D</option><option>E</option><option>F</option><option>G</option></select></p><p>At first, my group could not agree on a topic. <select class="inline" data-gap="17"><option value="">17</option><option>A</option><option>B</option><option>C</option><option>D</option><option>E</option><option>F</option><option>G</option></select></p><p>We finally decided to interview students about how they prepare for exams. <select class="inline" data-gap="18"><option value="">18</option><option>A</option><option>B</option><option>C</option><option>D</option><option>E</option><option>F</option><option>G</option></select></p><p>Recording was more difficult than we expected because the classroom was noisy. <select class="inline" data-gap="19"><option value="">19</option><option>A</option><option>B</option><option>C</option><option>D</option><option>E</option><option>F</option><option>G</option></select></p><p>When the episode was finished, we played it to the class. <select class="inline" data-gap="20"><option value="">20</option><option>A</option><option>B</option><option>C</option><option>D</option><option>E</option><option>F</option><option>G</option></select></p></div>
+<div class="text"><p><strong>A.</strong> Some wanted to talk about sport, while others preferred music.</p><p><strong>B.</strong> The teacher said it was interesting and useful.</p><p><strong>C.</strong> We had never done anything like that before.</p><p><strong>D.</strong> So we moved to the library, where it was much quieter.</p><p><strong>E.</strong> This gave us plenty of ideas for questions.</p><p><strong>F.</strong> I usually listen to podcasts on the bus.</p><p><strong>G.</strong> Next time, we would like to make a longer episode.</p></div>
+<div class="q gapset" data-answers='{"16":"C","17":"A","18":"E","19":"D","20":"B"}'><div class="fb"></div></div><button type="button" class="action" onclick="checkSelectGaps(this)">Check Reading Part 4</button></div>
+
+<div class="card"><div class="title"><h2>Reading Part 5</h2><span class="pill">Questions 21–26</span></div><div class="inst">Choose the correct word for each gap.</div>
+<div class="text"><h3>Why Sleep Matters</h3><p>Many teenagers do not get enough sleep. This can make it harder to <select class="inline" data-gap="21"><option value="">21</option><option>A. concentrate</option><option>B. concentrated</option><option>C. concentration</option><option>D. concentrating</option></select> in lessons.</p><p>Experts say students should avoid using phones just <select class="inline" data-gap="22"><option value="">22</option><option>A. after</option><option>B. before</option><option>C. during</option><option>D. until</option></select> sleeping.</p><p>Tired students often make <select class="inline" data-gap="23"><option value="">23</option><option>A. much</option><option>B. little</option><option>C. more</option><option>D. most</option></select> mistakes.</p><p>Resting well before a test may be as important <select class="inline" data-gap="24"><option value="">24</option><option>A. than</option><option>B. like</option><option>C. as</option><option>D. from</option></select> revising.</p><p>Students may find it easier to <select class="inline" data-gap="25"><option value="">25</option><option>A. deal</option><option>B. manage</option><option>C. solve</option><option>D. arrange</option></select> with stress.</p><p>Small changes can have a big <select class="inline" data-gap="26"><option value="">26</option><option>A. effect</option><option>B. affect</option><option>C. effort</option><option>D. event</option></select>.</p></div>
+<div class="q gapset" data-answers='{"21":"A. concentrate","22":"B. before","23":"C. more","24":"C. as","25":"A. deal","26":"A. effect"}'><div class="fb"></div></div><button type="button" class="action" onclick="checkSelectGaps(this)">Check Reading Part 5</button></div>
+
+<div class="card"><div class="title"><h2>Reading Part 6</h2><span class="pill">Questions 27–32</span></div><div class="inst">Write ONE word in each gap.</div>
+<div class="text"><h3>A Thank-you Email</h3><p>Dear Mrs Green,</p><p>Thank you <input class="gap" data-gap="27" placeholder="27"> organising the class trip last week. I really enjoyed visiting the science museum.</p><p>The best part was the robot show, because I had never seen anything <input class="gap" data-gap="28" placeholder="28"> it before.</p><p>The trip helped us understand science better <input class="gap" data-gap="29" placeholder="29"> reading about it in a book. My friend Dan said it was the most interesting trip he <input class="gap" data-gap="30" placeholder="30"> ever been on.</p><p>I would like to spend more time in the space section, <input class="gap" data-gap="31" placeholder="31"> we did not have enough time to see everything.</p><p>Thanks again <input class="gap" data-gap="32" placeholder="32"> a great day.</p></div>
+<div class="q gapset" data-answers='{"27":"for","28":"like","29":"than","30":"has","31":"because","32":"for"}'><div class="fb"></div></div><button type="button" class="action" onclick="checkTextGaps(this)">Check Reading Part 6</button></div>
+</section>
+
+<section id="writing"><div class="card"><div class="title"><h2>Writing Part 1</h2><span class="pill">Email • 100 words</span></div><div class="inst">You have received an email from your English friend, Sophie. Write your reply in about 100 words.</div><div class="msg"><strong>From: Sophie</strong><p>I want to start a new hobby, but I don’t know what to choose. What hobby do you think I should try? Why is it a good idea? Can we do it together sometime?</p></div><textarea id="w1" placeholder="Write your email here..."></textarea><div id="wc1" class="wc">0 words</div><button type="button" class="action secondary" onclick="words('w1','wc1')">Count Words</button></div>
+<div class="card"><div class="title"><h2>Writing Part 2</h2><span class="pill">Choose ONE</span></div><div class="two"><div class="text"><h3>Article</h3><p><strong>How can students stay healthy during the school year?</strong></p><p>Write about useful habits and explain why they help.</p></div><div class="text"><h3>Story</h3><p>Your story must begin with:</p><p><strong>Everyone was waiting at the station when suddenly the lights went out.</strong></p></div></div><textarea id="w2" placeholder="Write your article or story here..."></textarea><div id="wc2" class="wc">0 words</div><button type="button" class="action secondary" onclick="words('w2','wc2')">Count Words</button><details><summary>Writing checklist</summary><p>Answer all parts. Use paragraphs. Check tenses, spelling, linking words and punctuation.</p></details></div></section>
+
+<section id="listening">
+<div class="card"><div class="title"><h2>Listening Part 1</h2><span class="pill">Questions 1–7</span></div><div class="inst">Teacher reads each script twice. Students choose the correct answer.</div>
+<div id="listen1"></div><button type="button" class="action" onclick="checkQuestions(this)">Check Listening Part 1</button><button type="button" class="action secondary" onclick="showScript('s1')">Show / Hide Teacher Script</button><div class="script" id="s1">1. I know Tom is bringing drinks and Mia has plates, so I’ll bring a chocolate cake.
+2. I didn’t leave it on the bus. It was too warm in science, so I put my jacket on the back of my classroom chair.
+3. The museum opens at two, and we already have tickets, so let’s eat before we go in.
+4. Maths is getting better, and chemistry is still difficult. History is easy for me because I love stories about the past.
+5. The trains aren’t running, and my car is at the garage, so I’ll take the bus.
+6. We have enough bread and eggs. Can you get some milk?
+7. I watched football yesterday, and I don’t feel like a comedy. There’s a documentary about oceans that looks interesting.</div></div>
+
+<div class="card"><div class="title"><h2>Listening Part 2</h2><span class="pill">Questions 8–13</span></div><div class="inst">Listen to a girl talking about joining a running club.</div><div id="listen2"></div><button type="button" class="action" onclick="checkQuestions(this)">Check Listening Part 2</button><button type="button" class="action secondary" onclick="showScript('s2')">Show / Hide Teacher Script</button><div class="script" id="s2">I joined the running club because I wanted to get fitter. At first, the hardest thing was running for more than five minutes without stopping. One of the older runners was very kind and told me to take short breaks. The club meets on Wednesday evenings in the park. Now I love the friendly atmosphere most. My advice is simple: start slowly and don’t compare yourself with faster people.</div></div>
+
+<div class="card"><div class="title"><h2>Listening Part 3</h2><span class="pill">Questions 14–19</span></div><div class="inst">Complete the notes with one or two words.</div><div class="text"><p><strong>New Art Workshop</strong></p><p>Place: community <input class="gap" data-gap="14" placeholder="14"></p><p>Starts on: <input class="gap" data-gap="15" placeholder="15"></p><p>Teacher’s name: Mr <input class="gap" data-gap="16" placeholder="16"></p><p>Students should bring: an old <input class="gap" data-gap="17" placeholder="17"></p><p>First project: painting a <input class="gap" data-gap="18" placeholder="18"></p><p>Cost: £<input class="gap" data-gap="19" placeholder="19"></p></div><div class="q gapset" data-answers='{"14":"centre","15":"monday","16":"brown","17":"shirt","18":"landscape","19":"12"}'><div class="fb"></div></div><button type="button" class="action" onclick="checkTextGaps(this)">Check Listening Part 3</button><button type="button" class="action secondary" onclick="showScript('s3')">Show / Hide Teacher Script</button><div class="script" id="s3">The workshop will take place at the community centre. The first class is on Monday. The teacher is Mr Brown. Please bring an old shirt because painting can be messy. In the first lesson, you’ll paint a landscape. The course costs twelve pounds, and all other materials are included.</div></div>
+
+<div class="card"><div class="title"><h2>Listening Part 4</h2><span class="pill">Questions 20–25</span></div><div class="inst">Listen to an interview with a teenage volunteer.</div><div id="listen4"></div><button type="button" class="action" onclick="checkQuestions(this)">Check Listening Part 4</button><button type="button" class="action secondary" onclick="showScript('s4')">Show / Hide Teacher Script</button><div class="script" id="s4">Ryan volunteers at an animal shelter near his house. He started because his cousin suggested it. He mostly walks dogs and sometimes helps prepare food. At first, he was nervous about handling large dogs, but the staff helped him. He has learned to be more patient because animals need time to trust people. In the future, he would like to work with animals, maybe as a vet assistant.</div></div>
+</section>
+
+<section id="speaking"><div class="card"><div class="title"><h2>Speaking Part 1</h2><span class="pill">Interview</span></div><div class="cards"><div class="smallcard"><strong>Home and family</strong><p>Where do you live? What is your home like? Who do you spend the most time with?</p></div><div class="smallcard"><strong>Technology</strong><p>How often do you use your phone? What app is most useful for students?</p></div><div class="smallcard"><strong>Food</strong><p>What food do you enjoy? Can you cook anything?</p></div><div class="smallcard"><strong>Travel</strong><p>Where did you go on your last trip? Do you prefer travelling by car or train?</p></div></div></div><div class="card"><div class="title"><h2>Speaking Part 2</h2><span class="pill">Photo Description</span></div><div class="two"><div><div class="photo">Picture A<br>Teenagers cleaning a beach</div><p>Describe the people, place, actions and why the activity is important.</p></div><div><div class="photo">Picture B<br>People waiting at an airport</div><p>Describe the place, people, luggage and possible feelings.</p></div></div></div><div class="card"><div class="title"><h2>Speaking Part 3</h2><span class="pill">Collaborative Task</span></div><div class="inst">Your town wants to create a new place for teenagers. Discuss the options and choose the best two.</div><div class="cards"><div class="smallcard"><strong>Music room</strong><p>For bands and singers.</p></div><div class="smallcard"><strong>Study café</strong><p>Quiet place for homework.</p></div><div class="smallcard"><strong>Sports area</strong><p>Basketball, football and fitness.</p></div><div class="smallcard"><strong>Gaming room</strong><p>Computer games and competitions.</p></div><div class="smallcard"><strong>Art studio</strong><p>Drawing, painting and crafts.</p></div><div class="smallcard"><strong>Volunteer club</strong><p>Projects to help the community.</p></div></div></div><div class="card"><div class="title"><h2>Speaking Part 4</h2><span class="pill">Discussion</span></div><ol><li>What places do teenagers need in a town?</li><li>Is it better for teenagers to spend free time outdoors?</li><li>How can young people help their community?</li><li>Do you think gaming can be a useful hobby?</li><li>Why is it important to have quiet places to study?</li><li>What makes a town a good place to live?</li></ol></div></section>
+
+<section id="explain"><div class="card"><div class="title"><h2>Explanations & Improvement Advice</h2><span class="pill">Before the real PET exam</span></div><h3>Reading explanations</h3><div id="expList"></div><h3>Listening advice</h3><div class="exp"><strong>Main skill:</strong> Listen for the final decision, not every word you hear. PET often includes distractors such as “I wanted pasta, but I chose soup.”</div><h3>Areas to improve</h3><div class="exp"><strong>Reading:</strong> Build skill with paraphrasing, synonyms, linkers, pronoun reference and gap logic.</div><div class="exp"><strong>Writing:</strong> Answer every bullet point, use paragraphs, and check B1 tenses carefully.</div><div class="exp"><strong>Listening:</strong> Practise changed plans, numbers, dates, locations and similar-sounding options.</div><div class="exp"><strong>Speaking:</strong> Extend every answer with a reason or example. Use “I agree because…”, “What do you think?”, and “Shall we choose…?” in Part 3.</div></div></section>
+
+
+<section id="tools">
+  <div class="card">
+    <div class="title"><h2>Deployment Tools & Student Utilities</h2><span class="pill">Timer • Save • Report</span></div>
+    <p>Use these tools during live lessons, homework, mock exams, or self-study. They work inside this single HTML file without a server.</p>
+    <div class="tool-grid">
+      <div class="toolbox">
+        <h3>Exam Timer</h3>
+        <div class="timerDisplay" id="timerDisplay">45:00</div>
+        <p class="muted">Set minutes, then start the countdown.</p>
+        <input class="inputSmall" id="timerMinutes" type="number" min="1" max="180" value="45" aria-label="Timer minutes">
+        <br>
+        <button type="button" class="action" onclick="startTimer()">Start Timer</button>
+        <button type="button" class="action secondary" onclick="pauseTimer()">Pause</button>
+        <button type="button" class="action secondary" onclick="resetTimer()">Reset</button>
+      </div>
+      <div class="toolbox">
+        <h3>Progress Tools</h3>
+        <p>Students can save answers in the browser and continue later on the same device.</p>
+        <button type="button" class="action" onclick="saveProgress()">Save Progress</button>
+        <button type="button" class="action secondary" onclick="loadProgress()">Load Progress</button>
+        <button type="button" class="action secondary" onclick="checkAll()">Check All</button>
+      </div>
+      <div class="toolbox">
+        <h3>Teacher Report</h3>
+        <p>Create a quick report with score, writing word counts, and unchecked sections.</p>
+        <button type="button" class="action" onclick="generateReport()">Generate Report</button>
+        <button type="button" class="action secondary" onclick="downloadReport()">Download Report</button>
+      </div>
+    </div>
+    <h3>Generated Report</h3>
+    <div class="reportBox" id="reportBox">No report generated yet.</div>
+  </div>
+</section>
+
+<section id="key"><div class="card"><div class="title"><h2>Teacher Answer Key</h2><span class="pill">Quick marking</span></div><h3>Reading</h3><p><strong>Part 1:</strong> 1 C, 2 B, 3 A, 4 C, 5 B</p><p><strong>Part 2:</strong> 6 F, 7 A, 8 D, 9 H, 10 C</p><p><strong>Part 3:</strong> 11 C, 12 A, 13 D, 14 B, 15 A</p><p><strong>Part 4:</strong> 16 C, 17 A, 18 E, 19 D, 20 B</p><p><strong>Part 5:</strong> 21 A, 22 B, 23 C, 24 C, 25 A, 26 A</p><p><strong>Part 6:</strong> 27 for, 28 like, 29 than, 30 has, 31 because, 32 for</p><h3>Listening</h3><p><strong>Part 1:</strong> 1 C, 2 A, 3 B, 4 A, 5 C, 6 B, 7 A</p><p><strong>Part 2:</strong> 8 A, 9 B, 10 C, 11 A, 12 B, 13 C</p><p><strong>Part 3:</strong> 14 centre, 15 Monday, 16 Brown, 17 shirt, 18 landscape, 19 12</p><p><strong>Part 4:</strong> 20 B, 21 C, 22 A, 23 B, 24 A, 25 C</p><button type="button" class="action danger" onclick="resetAll()">Reset All Answers</button></div></section>
+
+</main><footer>PET B1 Practice Test 2 • Single-file HTML • Original classroom material</footer>
+<script>
+function tab(id,b){document.querySelectorAll('section').forEach(s=>s.classList.remove('activeSec'));document.getElementById(id).classList.add('activeSec');document.querySelectorAll('.tab').forEach(x=>x.classList.remove('active'));b.classList.add('active');scrollTo({top:0,behavior:'smooth'})}
+function setScore(){let c=0,t=0;document.querySelectorAll('.q[data-checked=true]').forEach(q=>{t++;if(q.dataset.correct==="true")c++});document.querySelectorAll('.gapset[data-checked=true]').forEach(g=>{c+=+(g.dataset.correctCount||0);t+=+(g.dataset.totalCount||0)});scoreText.textContent=`${c} / ${t} correct`;scoreBar.style.width=t?Math.round(c/t*100)+"%":"0%"}
+function checkQuestions(btn){btn.closest('.card').querySelectorAll('.q[data-answer]').forEach(q=>{let ans=q.dataset.answer, inp=q.querySelector('input:checked'), sel=q.querySelector('select'), val=inp?inp.value:(sel?sel.value:""), ok=val===ans, fb=q.querySelector('.fb');q.dataset.checked="true";q.dataset.correct=ok?"true":"false";fb.textContent=ok?"Correct ✓":(val?`Incorrect. Correct answer: ${ans}`:`No answer. Correct answer: ${ans}`);fb.className=ok?"fb ok":"fb bad"});setScore()}
+function checkSelectGaps(btn){let card=btn.closest('.card'), gs=card.querySelector('.gapset'), ans=JSON.parse(gs.dataset.answers), c=0,t=0;Object.entries(ans).forEach(([g,a])=>{let s=card.querySelector(`[data-gap="${g}"]`), ok=s.value===a;t++;if(ok)c++;s.style.borderColor=ok?"var(--good)":"var(--bad)";s.style.background=ok?"var(--green)":"var(--red)"});gs.dataset.checked="true";gs.dataset.correctCount=c;gs.dataset.totalCount=t;let fb=gs.querySelector('.fb');fb.textContent=`${c} / ${t} correct`;fb.className=c===t?"fb ok":"fb bad";setScore()}
+function checkTextGaps(btn){let card=btn.closest('.card'), gs=card.querySelector('.gapset'), ans=JSON.parse(gs.dataset.answers), c=0,t=0;Object.entries(ans).forEach(([g,a])=>{let i=card.querySelector(`[data-gap="${g}"]`), ok=i.value.trim().toLowerCase()===a.toLowerCase();t++;if(ok)c++;i.style.borderColor=ok?"var(--good)":"var(--bad)";i.style.background=ok?"var(--green)":"var(--red)";if(!ok)i.placeholder=a});gs.dataset.checked="true";gs.dataset.correctCount=c;gs.dataset.totalCount=t;let fb=gs.querySelector('.fb');fb.textContent=`${c} / ${t} correct`;fb.className=c===t?"fb ok":"fb bad";setScore()}
+function words(id,out){let text=document.getElementById(id).value.trim();document.getElementById(out).textContent=(text?text.split(/\s+/).length:0)+" words"}
+function showScript(id){let e=document.getElementById(id);e.style.display=e.style.display==="block"?"none":"block"}
+function resetAll(){document.querySelectorAll('input[type=radio]').forEach(i=>i.checked=false);document.querySelectorAll('select').forEach(s=>{s.value="";s.removeAttribute('style')});document.querySelectorAll('.gap').forEach(i=>{i.value="";i.removeAttribute('style')});document.querySelectorAll('textarea').forEach(t=>t.value="");document.querySelectorAll('.wc').forEach(w=>w.textContent="0 words");document.querySelectorAll('.fb').forEach(f=>{f.textContent="";f.className="fb"});document.querySelectorAll('.q,.gapset').forEach(q=>{delete q.dataset.checked;delete q.dataset.correct;delete q.dataset.correctCount;delete q.dataset.totalCount});document.querySelectorAll('.script').forEach(s=>s.style.display="none");setScore()}
+function makeQ(container, num, question, options, answer, prefix){let h=`<div class="q" data-answer="${answer}"><p><strong>${num}.</strong> ${question}</p><div class="opts">`;options.forEach((o,i)=>{let v=String.fromCharCode(65+i);h+=`<label class="opt"><input type="radio" name="${prefix}${num}" value="${v}"> ${v}. ${o}</label>`});h+=`</div><div class="fb"></div></div>`;document.getElementById(container).insertAdjacentHTML('beforeend',h)}
+[
+[1,"What will the girl take to the party?",["Drinks","Plates","A cake"],"C"],
+[2,"Where did the boy leave his jacket?",["In the classroom","On the bus","At home"],"A"],
+[3,"What will they do first?",["Buy tickets","Have lunch","Visit the museum"],"B"],
+[4,"Which subject does the girl find easiest?",["History","Maths","Chemistry"],"A"],
+[5,"How will the man travel tomorrow?",["By train","By car","By bus"],"C"],
+[6,"What does the woman need to buy?",["Bread","Milk","Eggs"],"B"],
+[7,"What is the boy going to watch?",["A documentary","A football match","A comedy film"],"A"]
+].forEach(x=>makeQ('listen1',...x,'l'));
+[
+[8,"Why did Chloe join the club?",["To get fitter","To win races","To meet her teacher"],"A"],
+[9,"What was difficult at first?",["Finding the park","Running without stopping","Buying shoes"],"B"],
+[10,"Who encouraged Chloe?",["Her brother","Her neighbour","Another runner"],"C"],
+[11,"When does the club meet?",["Wednesday evenings","Friday mornings","Sunday afternoons"],"A"],
+[12,"What does Chloe enjoy most now?",["The competitions","The friendly atmosphere","The new sports centre"],"B"],
+[13,"What advice does Chloe give?",["Run every day","Buy expensive clothes","Start slowly"],"C"]
+].forEach(x=>makeQ('listen2',...x,'l'));
+[
+[20,"Where does Ryan volunteer?",["At a hospital","At an animal shelter","At a sports centre"],"B"],
+[21,"Why did he start volunteering?",["His school made him","He wanted a paid job","His cousin suggested it"],"C"],
+[22,"What does Ryan usually do?",["Walk dogs","Answer emails","Clean windows"],"A"],
+[23,"What was Ryan nervous about?",["Meeting staff","Handling large dogs","Getting lost"],"B"],
+[24,"What has Ryan learned?",["To be more patient","To repair equipment","To train cats"],"A"],
+[25,"What does Ryan want to do in the future?",["Open a café","Become a journalist","Work with animals"],"C"]
+].forEach(x=>makeQ('listen4',...x,'l'));
+const explanations=["1 C: Platform 6, not Platform 3, means the place changed.","2 B: Lucy needs science notes before revision.","3 A: The offer gives a discount when buying two novels.","4 C: Indoor practice requires clean trainers.","5 B: Students must arrive early for grouping.","6 F: Posters and colours match art markers.","7 A: A travel journal records trips.","8 D: A board game is for family time at home.","9 H: A desk lamp solves the problem of poor light.","10 C: Plant kit is for a beginner grower.","11 C: The writer expected the job to be easy.","12 A: Paula stayed calm and patient.","13 D: Different customers needed different things.","14 B: The writer enjoys responsibility.","15 A: The article shows part-time jobs teach life skills.","16 C: It explains the new experience of podcasting.","17 A: It explains the group disagreement.","18 E: Interviews gave them question ideas.","19 D: The noisy room caused a move to the library.","20 B: The teacher's reaction follows playing the episode.","21 A: After 'harder to', use base verb 'concentrate'.","22 B: The phrase means before going to sleep.","23 C: 'More mistakes' is the correct comparative phrase.","24 C: The structure is 'as important as'.","25 A: Correct collocation: deal with stress.","26 A: 'Effect' is the noun.","27 for: Thank you for + -ing.","28 like: anything like it = anything similar.","29 than: after comparative 'better'.","30 has: present perfect with he.","31 because: gives the reason.","32 for: thanks again for..."];
+expList.innerHTML=explanations.map(e=>`<div class="exp"><strong>${e.split(':')[0]}:</strong>${e.substring(e.indexOf(':')+1)}</div>`).join('');
+</script>
+
+<script>
+/* Deployment quality upgrades: safer scoring, save/load, timer, report export, and full reset. */
+let timerRemaining = 45 * 60;
+let timerInterval = null;
+let lastReportText = "";
+
+function getEl(id){ return document.getElementById(id); }
+
+function setScore(){
+  let correct = 0, total = 0;
+  document.querySelectorAll('.q[data-checked="true"]').forEach(q=>{
+    total++;
+    if(q.dataset.correct === "true") correct++;
+  });
+  document.querySelectorAll('.gapset[data-checked="true"]').forEach(g=>{
+    correct += Number(g.dataset.correctCount || 0);
+    total += Number(g.dataset.totalCount || 0);
+  });
+  const scoreTextEl = getEl('scoreText');
+  const scoreBarEl = getEl('scoreBar');
+  if(scoreTextEl) scoreTextEl.textContent = `${correct} / ${total} correct`;
+  if(scoreBarEl) scoreBarEl.style.width = total ? Math.round(correct / total * 100) + "%" : "0%";
+  return {correct,total,percent: total ? Math.round(correct / total * 100) : 0};
+}
+
+function checkAll(){
+  document.querySelectorAll('button.action').forEach(btn=>{
+    const label = btn.textContent.toLowerCase();
+    if(label.startsWith('check ')) btn.click();
+  });
+  generateReport();
+}
+
+function saveProgress(){
+  const data = {
+    radios:{},
+    selects:[],
+    gaps:[],
+    textareas:{},
+    checkedQuestions:[],
+    checkedGapsets:[]
+  };
+  document.querySelectorAll('input[type="radio"]').forEach(r=>{
+    if(r.checked) data.radios[r.name] = r.value;
+  });
+  document.querySelectorAll('select').forEach((s,i)=>data.selects[i]=s.value);
+  document.querySelectorAll('.gap').forEach((g,i)=>data.gaps[i]=g.value);
+  document.querySelectorAll('textarea').forEach(t=>data.textareas[t.id]=t.value);
+  document.querySelectorAll('.q').forEach((q,i)=>{
+    data.checkedQuestions[i] = {
+      checked:q.dataset.checked || "",
+      correct:q.dataset.correct || "",
+      feedback:q.querySelector('.fb') ? q.querySelector('.fb').textContent : "",
+      feedbackClass:q.querySelector('.fb') ? q.querySelector('.fb').className : "fb"
+    };
+  });
+  document.querySelectorAll('.gapset').forEach((g,i)=>{
+    data.checkedGapsets[i] = {
+      checked:g.dataset.checked || "",
+      correctCount:g.dataset.correctCount || "",
+      totalCount:g.dataset.totalCount || "",
+      feedback:g.querySelector('.fb') ? g.querySelector('.fb').textContent : "",
+      feedbackClass:g.querySelector('.fb') ? g.querySelector('.fb').className : "fb"
+    };
+  });
+  localStorage.setItem('pet_b1_test_2_progress', JSON.stringify(data));
+  alert('Progress saved on this device.');
+}
+
+function loadProgress(){
+  const raw = localStorage.getItem('pet_b1_test_2_progress');
+  if(!raw){ alert('No saved progress found on this device.'); return; }
+  const data = JSON.parse(raw);
+  document.querySelectorAll('input[type="radio"]').forEach(r=>{
+    r.checked = data.radios && data.radios[r.name] === r.value;
+  });
+  document.querySelectorAll('select').forEach((s,i)=>{ if(data.selects) s.value = data.selects[i] || ""; });
+  document.querySelectorAll('.gap').forEach((g,i)=>{ if(data.gaps) g.value = data.gaps[i] || ""; });
+  document.querySelectorAll('textarea').forEach(t=>{ if(data.textareas && data.textareas[t.id] !== undefined) t.value = data.textareas[t.id]; });
+  document.querySelectorAll('.q').forEach((q,i)=>{
+    const saved = data.checkedQuestions ? data.checkedQuestions[i] : null;
+    if(saved){
+      if(saved.checked) q.dataset.checked = saved.checked; else delete q.dataset.checked;
+      if(saved.correct) q.dataset.correct = saved.correct; else delete q.dataset.correct;
+      const fb = q.querySelector('.fb');
+      if(fb){ fb.textContent = saved.feedback || ""; fb.className = saved.feedbackClass || "fb"; }
+    }
+  });
+  document.querySelectorAll('.gapset').forEach((g,i)=>{
+    const saved = data.checkedGapsets ? data.checkedGapsets[i] : null;
+    if(saved){
+      if(saved.checked) g.dataset.checked = saved.checked; else delete g.dataset.checked;
+      if(saved.correctCount) g.dataset.correctCount = saved.correctCount; else delete g.dataset.correctCount;
+      if(saved.totalCount) g.dataset.totalCount = saved.totalCount; else delete g.dataset.totalCount;
+      const fb = g.querySelector('.fb');
+      if(fb){ fb.textContent = saved.feedback || ""; fb.className = saved.feedbackClass || "fb"; }
+    }
+  });
+  setScore();
+  document.querySelectorAll('textarea').forEach(t=>{
+    if(t.id === 'w1') words('w1','wc1');
+    if(t.id === 'w2') words('w2','wc2');
+  });
+  alert('Progress loaded.');
+}
+
+function formatTime(seconds){
+  const m = Math.floor(seconds / 60).toString().padStart(2,'0');
+  const s = Math.floor(seconds % 60).toString().padStart(2,'0');
+  return `${m}:${s}`;
+}
+
+function updateTimerDisplay(){
+  const el = getEl('timerDisplay');
+  if(el) el.textContent = formatTime(timerRemaining);
+}
+
+function startTimer(){
+  const minutes = Number(getEl('timerMinutes')?.value || 45);
+  if(!timerInterval && timerRemaining <= 0) timerRemaining = minutes * 60;
+  if(!timerInterval && getEl('timerDisplay')?.textContent === "45:00") timerRemaining = minutes * 60;
+  clearInterval(timerInterval);
+  timerInterval = setInterval(()=>{
+    timerRemaining--;
+    updateTimerDisplay();
+    if(timerRemaining <= 0){
+      clearInterval(timerInterval);
+      timerInterval = null;
+      timerRemaining = 0;
+      updateTimerDisplay();
+      alert('Time is up.');
+    }
+  },1000);
+}
+
+function pauseTimer(){
+  clearInterval(timerInterval);
+  timerInterval = null;
+}
+
+function resetTimer(){
+  pauseTimer();
+  const minutes = Number(getEl('timerMinutes')?.value || 45);
+  timerRemaining = minutes * 60;
+  updateTimerDisplay();
+}
+
+function generateReport(){
+  const score = setScore();
+  const w1 = getEl('w1')?.value.trim() || "";
+  const w2 = getEl('w2')?.value.trim() || "";
+  const w1Words = w1 ? w1.split(/\s+/).filter(Boolean).length : 0;
+  const w2Words = w2 ? w2.split(/\s+/).filter(Boolean).length : 0;
+  const uncheckedQuestions = document.querySelectorAll('.q:not([data-checked="true"])').length;
+  const uncheckedGapsets = document.querySelectorAll('.gapset:not([data-checked="true"])').length;
+  const weakAreas = [];
+  if(score.total && score.percent < 60) weakAreas.push("Accuracy is below exam-ready level. Review distractors and question wording.");
+  if(w1Words < 80 || w1Words > 120) weakAreas.push("Writing Part 1 word count needs adjustment toward about 100 words.");
+  if(w2Words < 80 || w2Words > 120) weakAreas.push("Writing Part 2 word count needs adjustment toward about 100 words.");
+  if(uncheckedQuestions || uncheckedGapsets) weakAreas.push("Some questions are still unchecked. Complete all parts before final marking.");
+  if(!weakAreas.length) weakAreas.push("Good completion. Next step: review explanations and repeat weak task types under timed conditions.");
+  lastReportText =
+`PET B1 Practice Test 2 Report
+Generated: ${new Date().toLocaleString()}
+
+Interactive score: ${score.correct} / ${score.total} (${score.percent}%)
+Writing Part 1: ${w1Words} words
+Writing Part 2: ${w2Words} words
+Unchecked single questions: ${uncheckedQuestions}
+Unchecked gap sections: ${uncheckedGapsets}
+
+Suggested improvement areas:
+- ${weakAreas.join("\n- ")}
+
+Teacher notes:
+- Reading: check if errors come from synonyms, distractors, or grammar.
+- Writing: check task completion before grammar correction.
+- Listening: replay scripts and underline changed plans or rejected options.
+- Speaking: require reason + example for every answer.`;
+  const box = getEl('reportBox');
+  if(box) box.textContent = lastReportText;
+}
+
+function downloadReport(){
+  if(!lastReportText) generateReport();
+  const blob = new Blob([lastReportText], {type:'text/plain;charset=utf-8'});
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = 'pet_b1_test_2_student_report.txt';
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+  URL.revokeObjectURL(url);
+}
+
+function resetAll(){
+  document.querySelectorAll('input[type=radio]').forEach(i=>i.checked=false);
+  document.querySelectorAll('select').forEach(s=>{s.value="";s.removeAttribute('style')});
+  document.querySelectorAll('.gap').forEach(i=>{i.value="";i.removeAttribute('style')});
+  document.querySelectorAll('textarea').forEach(t=>t.value="");
+  document.querySelectorAll('.wc').forEach(w=>w.textContent="0 words");
+  document.querySelectorAll('.fb').forEach(f=>{f.textContent="";f.className="fb"});
+  document.querySelectorAll('.q,.gapset').forEach(q=>{
+    delete q.dataset.checked;
+    delete q.dataset.correct;
+    delete q.dataset.correctCount;
+    delete q.dataset.totalCount;
+  });
+  document.querySelectorAll('.script').forEach(s=>s.style.display="none");
+  localStorage.removeItem('pet_b1_test_2_progress');
+  lastReportText = "";
+  const box = getEl('reportBox');
+  if(box) box.textContent = "No report generated yet.";
+  resetTimer();
+  setScore();
+}
+
+document.addEventListener('DOMContentLoaded',()=>{
+  document.querySelectorAll('button').forEach(b=>{ if(!b.hasAttribute('type')) b.setAttribute('type','button'); });
+  resetTimer();
+  setScore();
+});
+</script>
+
+</body>
+</html>
